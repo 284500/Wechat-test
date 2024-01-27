@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "my-chat-list": "../../../compoents/my-ui/my-chat-list",
+    "my-nav-bar": "../../../compoents/my-ui/my-nav-bar",
+    "my-pop-up": "../../../compoents/my-ui/my-pop-up"
+  }
+}

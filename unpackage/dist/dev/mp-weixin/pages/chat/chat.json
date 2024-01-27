@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "my-pop-up": "../../compoents/my-ui/my-pop-up",
+    "my-chat-item": "../../compoents/my-ui/my-chat-item",
+    "my-icon-button": "../../compoents/my-ui/my-icon-button",
+    "my-nav-bar": "../../compoents/my-ui/my-nav-bar",
+    "emoji": "../../compoents/emoji"
+  }
+}

@@ -1,0 +1,1 @@
+<text class="{{['my-badge', 'bg-danger', 'text-white', 'font-sm', 'rounded-circle', 'data-v-1d866686', a]}}" style="{{b}}"><slot></slot></text>

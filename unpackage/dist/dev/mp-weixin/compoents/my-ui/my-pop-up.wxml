@@ -1,0 +1,1 @@
+<view wx:if="{{a}}" class="" style="z-index:9999;overflow:hidden"><view wx:if="{{b}}" bindtap="{{c}}" class="position-fixed top-0 right-0 left-0 bottom-0" style="{{d}}"></view><view class="{{['position-fixed', e, f]}}" style="{{g}}"><slot></slot></view></view>

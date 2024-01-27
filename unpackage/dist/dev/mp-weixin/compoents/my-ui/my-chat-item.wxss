@@ -1,0 +1,20 @@
+
+.chat-left-icon.data-v-ca41c7ef {
+		left: 95rpx;
+		top: 40rpx;
+}
+.chat-right-icon.data-v-ca41c7ef {
+		right: 95rpx;
+		top: 40rpx;
+}
+.pd.data-v-ca41c7ef {
+		padding: 15rpx;
+}
+
+	/* 溢出image里的bottom */
+uni-image.data-v-ca41c7ef {
+		display: block;
+}
+image.data-v-ca41c7ef {
+		display: block;
+}

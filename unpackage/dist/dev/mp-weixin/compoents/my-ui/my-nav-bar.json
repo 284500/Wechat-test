@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-pop-up": "./my-pop-up",
+    "my-icon-button": "./my-icon-button"
+  }
+}

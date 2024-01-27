@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "my-avatar": "../../../compoents/my-ui/my-avatar",
+    "my-list-item": "../../../compoents/my-ui/my-list-item",
+    "my-nav-bar": "../../../compoents/my-ui/my-nav-bar",
+    "my-divider": "../../../compoents/my-ui/my-divider"
+  }
+}
