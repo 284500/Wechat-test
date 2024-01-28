@@ -17,19 +17,14 @@
 				class="chat-left-icon iconfont font-md text-white position-absolute">&#xe609;</text>
 			<view class="bg-white rounded ml-3" style="max-width: 500rpx;max-height: 200rpx;" :class="labelClass">
 				<text v-if="item.type==='text'" class="font-md">{{item.data}}</text>
-				<!-- <image v-if="item.type==='emoji'" :src="item.data" lazy-load></image> -->
-				<image v-if="item.type==='emoji'" :src="item.data" mode="widthFix" lazy-load
-					style="width: 300rpx;height: 300rpx;border-radius: 10rpx;" @tap="preview(imgList,item.data)">
-				</image>
+				<MyImage v-if="item.type==='emoji'" :src="item.data" @click="preview(imgList,item.data)"></MyImage>
 			</view>
 		</view>
 		<!-- 右边用户栏 -->
 		<view v-else class="flex pr-2 pt-2 mb-1 align-start justify-end position-relative" style="">
 			<view class="bg-chat-item rounded mr-3" style="max-width: 500rpx;" :class="labelClass">
 				<text v-if="item.type==='text'" class="font-md">{{item.data}}</text>
-				<image v-if="item.type==='emoji'" :src="item.data" mode="widthFix" lazy-load
-					style="width:300rpx;height: 300rpx; border-radius: 10rpx;" @tap="preview(imgList,item.data)">
-				</image>
+				<MyImage v-if="item.type==='emoji'" :src="item.data" @click="preview(imgList,item.data)"></MyImage>
 			</view>
 			<text v-if="item.type==='text'"
 				class="chat-right-icon iconfont font-md text-chat-item position-absolute">&#xe640;</text>
@@ -42,10 +37,12 @@
 
 <script>
 	import $T from '@/common/time.js'
+	import MyImage from '@/compoents/my-ui/my-image.vue'
 	import MyAvatar from '@/compoents/my-ui/my-avatar.vue'
 	export default {
 		components: {
-			MyAvatar
+			MyAvatar,
+			MyImage
 		},
 		data() {
 			return {}
@@ -86,6 +83,12 @@
 				} else {
 					return ' '
 				}
+			},
+			// 图片宽高
+			imagestyle() {
+				const height = this.h;
+				const width = this.w;
+				return `width:${width}px;height:${height}px; border-radius: 10rpx;`
 			}
 		},
 		methods: {
@@ -121,7 +124,7 @@
 						}
 					}
 				});
-			}
+			},
 		}
 	}
 </script>

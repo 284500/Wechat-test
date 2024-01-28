@@ -45,7 +45,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$f = {
+  const _sfc_main$g = {
     data() {
       return {};
     },
@@ -78,8 +78,8 @@ if (uni.restoreGlobal) {
       style: vue.normalizeStyle($options.getStyle)
     }, null, 14, ["src"]);
   }
-  const CompoentsMyUiMyAvatar = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-avatar.vue"]]);
-  const _sfc_main$e = {
+  const CompoentsMyUiMyAvatar = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$e], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-avatar.vue"]]);
+  const _sfc_main$f = {
     data() {
       return {};
     },
@@ -109,7 +109,7 @@ if (uni.restoreGlobal) {
       /* CLASS, STYLE */
     );
   }
-  const CompoentsMyUiMyBadge = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-1d866686"], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-badge.vue"]]);
+  const CompoentsMyUiMyBadge = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$d], ["__scopeId", "data-v-1d866686"], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-badge.vue"]]);
   const $T = {
     // 计算当前日期星座
     getHoroscope(date) {
@@ -183,7 +183,7 @@ if (uni.restoreGlobal) {
       return d.getFullYear() - birthday.getFullYear() - (d.getMonth() < birthday.getMonth() || d.getMonth() == birthday.getMonth() && d.getDate() < birthday.getDate() ? 1 : 0);
     }
   };
-  const _sfc_main$d = {
+  const _sfc_main$e = {
     components: {
       MyAvatar: CompoentsMyUiMyAvatar,
       MyBadge: CompoentsMyUiMyBadge
@@ -291,8 +291,8 @@ if (uni.restoreGlobal) {
       /* CLASS, HYDRATE_EVENTS */
     );
   }
-  const CompoentsMyUiMyChatList = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-chat-list.vue"]]);
-  const _sfc_main$c = {
+  const CompoentsMyUiMyChatList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$c], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-chat-list.vue"]]);
+  const _sfc_main$d = {
     data() {
       return {
         x: -1,
@@ -420,8 +420,8 @@ if (uni.restoreGlobal) {
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const CompoentsMyUiMyPopUp = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-pop-up.vue"]]);
-  const _sfc_main$b = {
+  const CompoentsMyUiMyPopUp = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$b], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-pop-up.vue"]]);
+  const _sfc_main$c = {
     props: {
       icon: {
         type: String,
@@ -446,8 +446,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  const CompoentsMyUiMyIconButton = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-icon-button.vue"]]);
-  const _sfc_main$a = {
+  const CompoentsMyUiMyIconButton = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$a], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-icon-button.vue"]]);
+  const _sfc_main$b = {
     components: {
       MyIconButton: CompoentsMyUiMyIconButton,
       MyPopUp: CompoentsMyUiMyPopUp
@@ -660,8 +660,8 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const CompoentsMyUiMyNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-nav-bar.vue"]]);
-  const _sfc_main$9 = {
+  const CompoentsMyUiMyNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$9], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-nav-bar.vue"]]);
+  const _sfc_main$a = {
     components: {
       MyNavBar: CompoentsMyUiMyNavBar,
       MyChatList: CompoentsMyUiMyChatList,
@@ -866,8 +866,8 @@ if (uni.restoreGlobal) {
       }, 8, ["body-height"])
     ]);
   }
-  const PagesTabbarIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__file", "F:/uniapp/仿微信/pages/tabbar/index/index.vue"]]);
-  const _sfc_main$8 = {
+  const PagesTabbarIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$8], ["__file", "F:/uniapp/仿微信/pages/tabbar/index/index.vue"]]);
+  const _sfc_main$9 = {
     computed: {
       getIamgeStyle() {
         return `width:${this.imageSize}rpx;height:${this.imageSize}rpx;`;
@@ -941,13 +941,13 @@ if (uni.restoreGlobal) {
       )
     ]);
   }
-  const MyListItem = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-list-item.vue"]]);
-  const _sfc_main$7 = {};
+  const MyListItem = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$7], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-list-item.vue"]]);
+  const _sfc_main$8 = {};
   function _sfc_render$6(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("view", { style: { "height": "18rpx", "background-color": "#efede9" } });
   }
-  const MyDivider = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-divider.vue"]]);
-  const _sfc_main$6 = {
+  const MyDivider = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$6], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-divider.vue"]]);
+  const _sfc_main$7 = {
     components: {
       MyNavBar: CompoentsMyUiMyNavBar,
       MyPopUp: CompoentsMyUiMyPopUp,
@@ -1066,8 +1066,8 @@ if (uni.restoreGlobal) {
       }, 8, ["onClick"])
     ]);
   }
-  const PagesTabbarFindFind = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "F:/uniapp/仿微信/pages/tabbar/find/find.vue"]]);
-  const _sfc_main$5 = {
+  const PagesTabbarFindFind = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$5], ["__file", "F:/uniapp/仿微信/pages/tabbar/find/find.vue"]]);
+  const _sfc_main$6 = {
     components: {
       MyDivider,
       MyListItem
@@ -1161,8 +1161,8 @@ if (uni.restoreGlobal) {
       })
     ]);
   }
-  const PagesTabbarMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "F:/uniapp/仿微信/pages/tabbar/my/my.vue"]]);
-  const _sfc_main$4 = {
+  const PagesTabbarMyMy = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$4], ["__file", "F:/uniapp/仿微信/pages/tabbar/my/my.vue"]]);
+  const _sfc_main$5 = {
     components: {
       MyNavBar: CompoentsMyUiMyNavBar,
       MyPopUp: CompoentsMyUiMyPopUp,
@@ -1305,10 +1305,54 @@ if (uni.restoreGlobal) {
       ))
     ]);
   }
-  const PagesTabbarMailMail = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "F:/uniapp/仿微信/pages/tabbar/mail/mail.vue"]]);
+  const PagesTabbarMailMail = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$3], ["__file", "F:/uniapp/仿微信/pages/tabbar/mail/mail.vue"]]);
+  const _sfc_main$4 = {
+    __name: "my-image",
+    props: ["src", "imageClass"],
+    setup(__props) {
+      const props = __props;
+      const h = vue.ref("100");
+      const w = vue.ref("100");
+      const imageStyle = vue.computed(() => {
+        const height = h.value;
+        const width = w.value;
+        return `width:${width}px;height:${height}px; border-radius: 10rpx;`;
+      });
+      const loadImage = (e) => {
+        const {
+          width,
+          height
+        } = e.detail;
+        formatAppLog("log", "at compoents/my-ui/my-image.vue:26", e.detail);
+        const maxW = uni.upx2px(500);
+        const maxH = uni.upx2px(500);
+        if (height < maxH) {
+          w.value = w.value <= maxW ? width : maxW;
+          h.value = height;
+          return;
+        }
+        h.value = maxH;
+        const width2 = maxH * (width / height);
+        w.value = width2 < width ? width2 : maxW;
+        formatAppLog("log", "at compoents/my-ui/my-image.vue:38", h.value, w.value);
+      };
+      return (_ctx, _cache) => {
+        return vue.openBlock(), vue.createElementBlock("image", {
+          src: props.src,
+          mode: "widthFix",
+          class: vue.normalizeClass(__props.imageClass),
+          style: vue.normalizeStyle(vue.unref(imageStyle)),
+          onLoad: loadImage,
+          onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
+        }, null, 46, ["src"]);
+      };
+    }
+  };
+  const MyImage = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__file", "F:/uniapp/仿微信/compoents/my-ui/my-image.vue"]]);
   const _sfc_main$3 = {
     components: {
-      MyAvatar: CompoentsMyUiMyAvatar
+      MyAvatar: CompoentsMyUiMyAvatar,
+      MyImage
     },
     data() {
       return {};
@@ -1346,6 +1390,12 @@ if (uni.restoreGlobal) {
         } else {
           return " ";
         }
+      },
+      // 图片宽高
+      imagestyle() {
+        const height = this.h;
+        const width = this.w;
+        return `width:${width}px;height:${height}px; border-radius: 10rpx;`;
       }
     },
     methods: {
@@ -1364,17 +1414,17 @@ if (uni.restoreGlobal) {
       },
       //预览图片
       preview(url, currentImage) {
-        formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:110", currentImage);
+        formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:113", currentImage);
         uni.previewImage({
           current: currentImage,
           urls: url,
           longPressActions: {
             itemList: ["发送给朋友", "保存图片", "收藏"],
             success: function(data) {
-              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:117", "选中了第" + (data.tapIndex + 1) + "个按钮,第" + (data.index + 1) + "张图片");
+              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:120", "选中了第" + (data.tapIndex + 1) + "个按钮,第" + (data.index + 1) + "张图片");
             },
             fail: function(err) {
-              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:120", err.errMsg);
+              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:123", err.errMsg);
             }
           }
         });
@@ -1383,6 +1433,7 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_MyAvatar = vue.resolveComponent("MyAvatar");
+    const _component_MyImage = vue.resolveComponent("MyImage");
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1444,13 +1495,9 @@ if (uni.restoreGlobal) {
                 1
                 /* TEXT */
               )) : vue.createCommentVNode("v-if", true),
-              vue.createCommentVNode(` <image v-if="item.type==='emoji'" :src="item.data" lazy-load></image> `),
-              $props.item.type === "emoji" ? (vue.openBlock(), vue.createElementBlock("image", {
+              $props.item.type === "emoji" ? (vue.openBlock(), vue.createBlock(_component_MyImage, {
                 key: 1,
                 src: $props.item.data,
-                mode: "widthFix",
-                "lazy-load": "",
-                style: { "width": "300rpx", "height": "300rpx", "border-radius": "10rpx" },
                 onClick: _cache[0] || (_cache[0] = ($event) => $options.preview($props.imgList, $props.item.data))
               }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true)
             ],
@@ -1483,12 +1530,9 @@ if (uni.restoreGlobal) {
                     1
                     /* TEXT */
                   )) : vue.createCommentVNode("v-if", true),
-                  $props.item.type === "emoji" ? (vue.openBlock(), vue.createElementBlock("image", {
+                  $props.item.type === "emoji" ? (vue.openBlock(), vue.createBlock(_component_MyImage, {
                     key: 1,
                     src: $props.item.data,
-                    mode: "widthFix",
-                    "lazy-load": "",
-                    style: { "width": "300rpx", "height": "300rpx", "border-radius": "10rpx" },
                     onClick: _cache[1] || (_cache[1] = ($event) => $options.preview($props.imgList, $props.item.data))
                   }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true)
                 ],
