@@ -1,0 +1,1 @@
+<image src="{{a}}" mode="widthFix" class="{{b}}" style="{{c}}" bindload="{{d}}" bindtap="{{e}}"></image>

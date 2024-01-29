@@ -176,8 +176,27 @@ const _sfc_main = {
           data: "哈哈哈哈哈",
           isRemove: false,
           create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
+        },
+        {
+          avatar: "/static/images/mail/friend.png",
+          user_id: 1,
+          nickname: "ada",
+          type: "audio",
+          data: "/static/1.mp3",
+          isRemove: false,
+          create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
+        },
+        {
+          avatar: "/static/images/mail/friend.png",
+          user_id: 1,
+          nickname: "ada",
+          type: "audio",
+          data: "/static/2.mp3",
+          isRemove: false,
+          create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
         }
-      ]
+      ],
+      imageList: []
     };
   },
   methods: {
@@ -263,6 +282,7 @@ const _sfc_main = {
         case "emoji":
           obj.data = data;
           this.list.push(obj);
+          this.imageList.push(data);
           break;
       }
       this.$nextTick(() => {
@@ -415,7 +435,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         d: common_vendor.p({
           index,
           item,
-          ["pre-time"]: index > 0 ? $data.list[index - 1].create_time : 0
+          ["pre-time"]: index > 0 ? $data.list[index - 1].create_time : 0,
+          ["img-list"]: $data.imageList
         }),
         e: index,
         f: "chatItem_" + index

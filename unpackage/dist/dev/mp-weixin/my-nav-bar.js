@@ -78,6 +78,7 @@ const _sfc_main = {
     }
   },
   mounted() {
+    this.statusBarHeight = plus.navigator.getStatusbarHeight();
     this.navBarHeight = this.statusBarHeight + common_vendor.index.upx2px(90);
   }
 };

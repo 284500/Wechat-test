@@ -18,6 +18,11 @@
 			<view class="bg-white rounded ml-3" style="max-width: 500rpx;max-height: 200rpx;" :class="labelClass">
 				<text v-if="item.type==='text'" class="font-md">{{item.data}}</text>
 				<MyImage v-if="item.type==='emoji'" :src="item.data" @click="preview(imgList,item.data)"></MyImage>
+				<view v-if="item.type==='audio'" class="flex align-center">
+					<text>
+						4
+					</text>
+				</view>
 			</view>
 		</view>
 		<!-- 右边用户栏 -->
@@ -25,6 +30,11 @@
 			<view class="bg-chat-item rounded mr-3" style="max-width: 500rpx;" :class="labelClass">
 				<text v-if="item.type==='text'" class="font-md">{{item.data}}</text>
 				<MyImage v-if="item.type==='emoji'" :src="item.data" @click="preview(imgList,item.data)"></MyImage>
+				<view @click="playAudio" v-if="item.type==='audio'" class="flex align-center bg-dark">
+					<text class="font">
+						4
+					</text>
+				</view>
 			</view>
 			<text v-if="item.type==='text'"
 				class="chat-right-icon iconfont font-md text-chat-item position-absolute">&#xe640;</text>
@@ -39,6 +49,7 @@
 	import $T from '@/common/time.js'
 	import MyImage from '@/compoents/my-ui/my-image.vue'
 	import MyAvatar from '@/compoents/my-ui/my-avatar.vue'
+	const innerAudioContext = uni.createInnerAudioContext();
 	export default {
 		components: {
 			MyAvatar,
@@ -47,7 +58,11 @@
 		data() {
 			return {}
 		},
-
+		// 销毁之前
+		// beforeDestroy() {
+		// 	console.log("组件销毁")
+		// 	innerAudioContext.destroy();
+		// },
 		props: {
 			item: {
 				type: Object,
@@ -124,6 +139,12 @@
 						}
 					}
 				});
+			},
+			//播放音频
+			playAudio() {
+				innerAudioContext.stop()
+				innerAudioContext.src = this.item.data;
+				innerAudioContext.play()
 			},
 		}
 	}

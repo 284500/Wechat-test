@@ -523,6 +523,7 @@ if (uni.restoreGlobal) {
       }
     },
     mounted() {
+      this.statusBarHeight = plus.navigator.getStatusbarHeight();
       this.navBarHeight = this.statusBarHeight + uni.upx2px(90);
     }
   };
@@ -1349,6 +1350,7 @@ if (uni.restoreGlobal) {
     }
   };
   const MyImage = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["__file", "F:/uniapp/仿微信/compoents/my-ui/my-image.vue"]]);
+  const innerAudioContext = uni.createInnerAudioContext();
   const _sfc_main$3 = {
     components: {
       MyAvatar: CompoentsMyUiMyAvatar,
@@ -1357,6 +1359,11 @@ if (uni.restoreGlobal) {
     data() {
       return {};
     },
+    // 销毁之前
+    // beforeDestroy() {
+    // 	__f__('log','at compoents/my-ui/my-chat-item.vue:63',"组件销毁")
+    // 	innerAudioContext.destroy();
+    // },
     props: {
       item: {
         type: Object,
@@ -1414,20 +1421,26 @@ if (uni.restoreGlobal) {
       },
       //预览图片
       preview(url, currentImage) {
-        formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:113", currentImage);
+        formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:128", currentImage);
         uni.previewImage({
           current: currentImage,
           urls: url,
           longPressActions: {
             itemList: ["发送给朋友", "保存图片", "收藏"],
             success: function(data) {
-              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:120", "选中了第" + (data.tapIndex + 1) + "个按钮,第" + (data.index + 1) + "张图片");
+              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:135", "选中了第" + (data.tapIndex + 1) + "个按钮,第" + (data.index + 1) + "张图片");
             },
             fail: function(err) {
-              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:123", err.errMsg);
+              formatAppLog("log", "at compoents/my-ui/my-chat-item.vue:138", err.errMsg);
             }
           }
         });
+      },
+      //播放音频
+      playAudio() {
+        innerAudioContext.stop();
+        innerAudioContext.src = this.item.data;
+        innerAudioContext.play();
       }
     }
   };
@@ -1437,7 +1450,7 @@ if (uni.restoreGlobal) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
-        onLongpress: _cache[2] || (_cache[2] = (...args) => $options.onLong && $options.onLong(...args))
+        onLongpress: _cache[3] || (_cache[3] = (...args) => $options.onLong && $options.onLong(...args))
       },
       [
         vue.createCommentVNode(" 时间显示 "),
@@ -1499,7 +1512,13 @@ if (uni.restoreGlobal) {
                 key: 1,
                 src: $props.item.data,
                 onClick: _cache[0] || (_cache[0] = ($event) => $options.preview($props.imgList, $props.item.data))
-              }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true)
+              }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
+              $props.item.type === "audio" ? (vue.openBlock(), vue.createElementBlock("view", {
+                key: 2,
+                class: "flex align-center"
+              }, [
+                vue.createElementVNode("text", null, " 4 ")
+              ])) : vue.createCommentVNode("v-if", true)
             ],
             2
             /* CLASS */
@@ -1534,7 +1553,14 @@ if (uni.restoreGlobal) {
                     key: 1,
                     src: $props.item.data,
                     onClick: _cache[1] || (_cache[1] = ($event) => $options.preview($props.imgList, $props.item.data))
-                  }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true)
+                  }, null, 8, ["src"])) : vue.createCommentVNode("v-if", true),
+                  $props.item.type === "audio" ? (vue.openBlock(), vue.createElementBlock("view", {
+                    key: 2,
+                    onClick: _cache[2] || (_cache[2] = (...args) => $options.playAudio && $options.playAudio(...args)),
+                    class: "flex align-center bg-dark"
+                  }, [
+                    vue.createElementVNode("text", { class: "font" }, " 4 ")
+                  ])) : vue.createCommentVNode("v-if", true)
                 ],
                 2
                 /* CLASS */
@@ -1828,6 +1854,24 @@ if (uni.restoreGlobal) {
             data: "哈哈哈哈哈",
             isRemove: false,
             create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
+          },
+          {
+            avatar: "/static/images/mail/friend.png",
+            user_id: 1,
+            nickname: "ada",
+            type: "audio",
+            data: "/static/1.mp3",
+            isRemove: false,
+            create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
+          },
+          {
+            avatar: "/static/images/mail/friend.png",
+            user_id: 1,
+            nickname: "ada",
+            type: "audio",
+            data: "/static/2.mp3",
+            isRemove: false,
+            create_time: (/* @__PURE__ */ new Date()).getTime() - 1e3 * 60 * 4
           }
         ],
         imageList: []
@@ -1840,7 +1884,7 @@ if (uni.restoreGlobal) {
         this.message = strArr.join("");
       },
       sendEmoji(emoji2) {
-        formatAppLog("log", "at pages/chat/chat.vue:273", "aad");
+        formatAppLog("log", "at pages/chat/chat.vue:291", "aad");
         this.message = this.message + emoji2;
       },
       //改变点击状态
@@ -1875,7 +1919,7 @@ if (uni.restoreGlobal) {
       },
       // 拓展菜单事件
       actionEvent(event) {
-        formatAppLog("log", "at pages/chat/chat.vue:311", event);
+        formatAppLog("log", "at pages/chat/chat.vue:329", event);
         switch (event) {
           case "uploadImage":
             uni.chooseImage({
@@ -1889,7 +1933,7 @@ if (uni.restoreGlobal) {
                 const images = res.tempFilePaths;
                 images.forEach((item) => {
                   this.send("emoji", item);
-                  formatAppLog("log", "at pages/chat/chat.vue:343", item);
+                  formatAppLog("log", "at pages/chat/chat.vue:361", item);
                 });
               }
             });
@@ -1927,7 +1971,7 @@ if (uni.restoreGlobal) {
       //跳转底部
       pageToBottom() {
         this.$nextTick(() => {
-          formatAppLog("log", "at pages/chat/chat.vue:392", "跳转底部");
+          formatAppLog("log", "at pages/chat/chat.vue:410", "跳转底部");
           let lastIndex = this.list.length - 1;
           this.scrollIntoView = "chatItem_" + lastIndex;
         });
@@ -1964,7 +2008,7 @@ if (uni.restoreGlobal) {
     },
     watch: {
       mode(newValue, oldValue) {
-        formatAppLog("log", "at pages/chat/chat.vue:438", this.mode);
+        formatAppLog("log", "at pages/chat/chat.vue:456", this.mode);
         if (newValue === "text") {
           this.$refs.action.hide();
         }

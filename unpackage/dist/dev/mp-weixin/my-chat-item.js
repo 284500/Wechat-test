@@ -1,13 +1,20 @@
 "use strict";
-const common_time = require("./common/time.js");
 const common_vendor = require("./common/vendor.js");
+const common_time = require("./common/time.js");
+const MyImage = () => "./compoents/my-ui/my-image.js";
 const MyAvatar = () => "./compoents/my-ui/my-avatar2.js";
+const innerAudioContext = common_vendor.index.createInnerAudioContext();
 const _sfc_main = {
   components: {
-    MyAvatar
+    MyAvatar,
+    MyImage
   },
   data() {
     return {};
+  },
+  // 销毁之前
+  beforeDestroy() {
+    innerAudioContext.destroy();
   },
   props: {
     item: {
@@ -15,10 +22,14 @@ const _sfc_main = {
       default: ""
     },
     preTime: {
-      tyepe: [String, Number],
+      type: [String, Number],
       default: 0
     },
-    index: Number
+    index: Number,
+    imgList: {
+      type: Array,
+      default: ["/static/logo.png", "/static/images/0.gif"]
+    }
   },
   computed: {
     //是否是本人
@@ -38,6 +49,12 @@ const _sfc_main = {
       } else {
         return " ";
       }
+    },
+    // 图片宽高
+    imagestyle() {
+      const height = this.h;
+      const width = this.w;
+      return `width:${width}px;height:${height}px; border-radius: 10rpx;`;
     }
   },
   methods: {
@@ -53,12 +70,36 @@ const _sfc_main = {
         y,
         index: this.index
       });
+    },
+    //预览图片
+    preview(url, currentImage) {
+      console.log(currentImage);
+      common_vendor.index.previewImage({
+        current: currentImage,
+        urls: url,
+        longPressActions: {
+          itemList: ["发送给朋友", "保存图片", "收藏"],
+          success: function(data) {
+            console.log("选中了第" + (data.tapIndex + 1) + "个按钮,第" + (data.index + 1) + "张图片");
+          },
+          fail: function(err) {
+            console.log(err.errMsg);
+          }
+        }
+      });
+    },
+    //播放音频
+    playAudio() {
+      innerAudioContext.stop();
+      innerAudioContext.src = this.item.data;
+      innerAudioContext.play();
     }
   }
 };
 if (!Array) {
   const _component_MyAvatar = common_vendor.resolveComponent("MyAvatar");
-  _component_MyAvatar();
+  const _component_MyImage = common_vendor.resolveComponent("MyImage");
+  (_component_MyAvatar + _component_MyImage)();
 }
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   return common_vendor.e({
@@ -81,27 +122,39 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   } : {}, {
     i: $props.item.type === "emoji"
   }, $props.item.type === "emoji" ? {
-    j: $props.item.data
+    j: common_vendor.o(($event) => $options.preview($props.imgList, $props.item.data)),
+    k: common_vendor.p({
+      src: $props.item.data
+    })
   } : {}, {
-    k: common_vendor.n($options.labelClass)
+    l: $props.item.type === "audio"
+  }, $props.item.type === "audio" ? {} : {}, {
+    m: common_vendor.n($options.labelClass)
   }) : common_vendor.e({
-    l: $props.item.type === "text"
+    n: $props.item.type === "text"
   }, $props.item.type === "text" ? {
-    m: common_vendor.t($props.item.data)
+    o: common_vendor.t($props.item.data)
   } : {}, {
-    n: $props.item.type === "emoji"
+    p: $props.item.type === "emoji"
   }, $props.item.type === "emoji" ? {
-    o: $props.item.data
-  } : {}, {
-    p: common_vendor.n($options.labelClass),
-    q: $props.item.type === "text"
-  }, $props.item.type === "text" ? {} : {}, {
+    q: common_vendor.o(($event) => $options.preview($props.imgList, $props.item.data)),
     r: common_vendor.p({
+      src: $props.item.data
+    })
+  } : {}, {
+    s: $props.item.type === "audio"
+  }, $props.item.type === "audio" ? {
+    t: common_vendor.o((...args) => $options.playAudio && $options.playAudio(...args))
+  } : {}, {
+    v: common_vendor.n($options.labelClass),
+    w: $props.item.type === "text"
+  }, $props.item.type === "text" ? {} : {}, {
+    x: common_vendor.p({
       src: $props.item.avatar,
       size: "70"
     })
   }), {
-    s: common_vendor.o((...args) => $options.onLong && $options.onLong(...args))
+    y: common_vendor.o((...args) => $options.onLong && $options.onLong(...args))
   });
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-ca41c7ef"], ["__file", "F:/uniapp/仿微信/compoents/my-ui/my-chat-item.vue"]]);

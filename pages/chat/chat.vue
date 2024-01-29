@@ -258,6 +258,24 @@
 						isRemove: false,
 						create_time: new Date().getTime() - 1000 * 60 * 4
 					},
+					{
+						avatar: "/static/images/mail/friend.png",
+						user_id: 1,
+						nickname: "ada",
+						type: "audio",
+						data: '/static/1.mp3',
+						isRemove: false,
+						create_time: new Date().getTime() - 1000 * 60 * 4
+					},
+					{
+						avatar: "/static/images/mail/friend.png",
+						user_id: 1,
+						nickname: "ada",
+						type: "audio",
+						data: '/static/2.mp3',
+						isRemove: false,
+						create_time: new Date().getTime() - 1000 * 60 * 4
+					},
 				],
 				imageList: []
 			}

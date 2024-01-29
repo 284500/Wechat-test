@@ -1,4 +1,5 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
     "my-pop-up": "../../compoents/my-ui/my-pop-up",
     "my-chat-item": "../../compoents/my-ui/my-chat-item",

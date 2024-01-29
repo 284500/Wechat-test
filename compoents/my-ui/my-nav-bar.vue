@@ -123,9 +123,7 @@
 			}
 		},
 		mounted() {
-			// #ifdef APP-PLUS-NVUE
 			this.statusBarHeight = plus.navigator.getStatusbarHeight();
-			//#endif
 			this.navBarHeight = this.statusBarHeight + uni.upx2px(90);
 		}
 	}
